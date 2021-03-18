@@ -1,0 +1,8 @@
+{
+  "index.enabled" : false,
+  "index.ignored_file_patterns" : [
+    "node_modules"
+  ],
+  "workspace.art_style" : 0,
+  "workspace.name" : "Slow Time Clock"
+}
