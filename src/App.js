@@ -1,19 +1,65 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ClockHand from "./ClockHand";
 import "./App.css";
 
 function App() {
+  const [time, setTime] = useState(Date.now());
+
+  const dayFraction = () => {
+    let now = new Date();
+    let today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+    let diff = now - today; // ms difference
+    return Math.round(diff / 1000) / 86400; // make seconds
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => setTime(dayFraction(), 1000));
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  const [timeRounded, setTimeRounded] = useState(0);
+  useEffect(() => {
+    setTimeRounded(Math.round(time * 24));
+  }, [time]);
+
   const clockNumbers = [];
+
+  const clockColoring = (i) => {
+    if (i === timeRounded) {
+      return "opacity-100";
+    } else if (i === timeRounded - 1 || i === timeRounded + 1) {
+      return "opacity-90";
+    } else if (i === timeRounded - 2 || i === timeRounded + 2) {
+      return "opacity-80";
+    } else if (i === timeRounded - 3 || i === timeRounded + 3) {
+      return "opacity-70";
+    } else {
+      return "opacity-60";
+    }
+  };
+
   for (var i = 1; i < 25; i++) {
     clockNumbers.push(
       <div
         key={i}
-        className="absolute inset-2 text-center text-white opacity-50 font-mono"
+        className={`clock-number absolute inset-2 text-center text-white  font-mono ${clockColoring(
+          i
+        )}`}
         style={{
           transform: `rotate(${15 * i}deg)`,
         }}
       >
-        {i}
+        <span
+          className="block"
+          style={{
+            transform: `rotate(${-15 * i}deg)`,
+          }}
+        >
+          {i}
+        </span>
       </div>
     );
   }
@@ -22,13 +68,13 @@ function App() {
     markers.push(
       <div
         key={j}
-        className="absolute inset-0 flex justify-center"
+        className="absolute -inset-3 flex justify-center"
         style={{
           transform: `rotate(${7.5 * j}deg)`,
         }}
       >
         <div
-          className={`w-0.5 ${j % 2 === 0 ? "h-1" : "h-2"} bg-white opacity-10`}
+          className={`w-0.5 ${j % 2 === 0 ? "h-1" : "h-2"} bg-white opacity-50`}
         />
       </div>
     );
@@ -47,7 +93,7 @@ function App() {
           }
         }
       >
-        <ClockHand />
+        <ClockHand time={time} />
         {clockNumbers}
         {markers}
       </div>
