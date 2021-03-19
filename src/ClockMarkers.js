@@ -16,19 +16,21 @@ export default function Markers(props) {
     }
   };
 
-  for (var j = 0; j < 48; j++) {
+  const marksPerHour = 7;
+
+  for (var j = 0; j < 24 * marksPerHour; j++) {
     markers.push(
       <div
         key={j}
         className="absolute inset-2 flex justify-center"
         style={{
-          transform: `rotate(${7.5 * j}deg)`,
+          transform: `rotate(${(15 / marksPerHour) * j}deg)`,
         }}
       >
         <div
           className={`w-0.5 ${
-            j % 2 === 0 ? "h-1" : "h-2"
-          } bg-white ${clockColoring(j / 2)} rounded-full`}
+            j % marksPerHour === 0 ? "h-2" : "h-1"
+          } bg-white ${clockColoring(j / marksPerHour)} rounded-full`}
         />
       </div>
     );
