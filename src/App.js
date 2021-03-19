@@ -45,7 +45,7 @@ function App() {
     clockNumbers.push(
       <div
         key={i}
-        className={`clock-number absolute inset-2 text-center text-white  font-mono ${clockColoring(
+        className={`clock-number absolute inset-5 text-center text-white  font-mono ${clockColoring(
           i
         )}`}
         style={{
@@ -68,7 +68,7 @@ function App() {
     markers.push(
       <div
         key={j}
-        className="absolute -inset-3 flex justify-center"
+        className="absolute inset-1 flex justify-center"
         style={{
           transform: `rotate(${7.5 * j}deg)`,
         }}
@@ -80,18 +80,25 @@ function App() {
     );
   }
 
+  const sleepTime = 21;
+  const wakeTime = 7;
+  const getAngleFromHour = (time) => (time / 24) * 360;
+
+  const clockFaceGradient = `conic-gradient(from 0turn at 50% 50%, #000, ${getAngleFromHour(
+    wakeTime - 0.75
+  )}deg, #1e1e1e, ${getAngleFromHour(
+    wakeTime + 0.75
+  )}deg, #1e1e1e, ${getAngleFromHour(
+    sleepTime - 0.75
+  )}, #000, ${getAngleFromHour(sleepTime + 0.75)}deg, #000)`;
+
   return (
     <div className="h-screen flex items-center w-screen justify-center">
       <div
         className="relative w-96 h-96 rounded-full"
-        style={
-          {
-            /*
-          background:
-            "conic-gradient(from 0turn at 50% 50%, #000, 70deg, #1e1e1e, 120deg, #1e1e1e, 250deg, #000, 300deg, #000)",
-        */
-          }
-        }
+        style={{
+          background: clockFaceGradient,
+        }}
       >
         <ClockHand time={time} />
         {clockNumbers}
