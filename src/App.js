@@ -53,6 +53,12 @@ function App() {
         <ClockNumbers timeRounded={timeRounded} />
         <ClockMarkers timeRounded={timeRounded} />
       </div>
+      {
+        // <nav>
+        //   <a href="#">Analog</a>
+        //   <a href="#">Progress</a>
+        // </nav>
+      }
     </div>
   );
 }

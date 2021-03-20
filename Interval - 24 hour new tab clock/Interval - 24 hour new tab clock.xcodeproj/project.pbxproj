@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D367E2C526060DD40093DD1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367E2C426060DD40093DD1A /* AppDelegate.swift */; };
+		D367E2C826060DD40093DD1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D367E2C626060DD40093DD1A /* Main.storyboard */; };
+		D367E2CA26060DD40093DD1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367E2C926060DD40093DD1A /* ViewController.swift */; };
+		D367E2CC26060DD50093DD1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D367E2CB26060DD50093DD1A /* Assets.xcassets */; };
+		D367E2D326060DD50093DD1A /* Interval - 24 hour new tab clock Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D367E2D226060DD50093DD1A /* Interval - 24 hour new tab clock Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D367E2D826060DD50093DD1A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D367E2D726060DD50093DD1A /* Cocoa.framework */; };
+		D367E2DB26060DD50093DD1A /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367E2DA26060DD50093DD1A /* SafariWebExtensionHandler.swift */; };
+		D367E2F026060DD70093DD1A /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = D367E2E826060DD70093DD1A /* favicon.ico */; };
+		D367E2F126060DD70093DD1A /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = D367E2E926060DD70093DD1A /* index.html */; };
+		D367E2F226060DD70093DD1A /* logo512.png in Resources */ = {isa = PBXBuildFile; fileRef = D367E2EA26060DD70093DD1A /* logo512.png */; };
+		D367E2F326060DD70093DD1A /* asset-manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = D367E2EB26060DD70093DD1A /* asset-manifest.json */; };
+		D367E2F426060DD70093DD1A /* static in Resources */ = {isa = PBXBuildFile; fileRef = D367E2EC26060DD70093DD1A /* static */; };
+		D367E2F526060DD70093DD1A /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = D367E2ED26060DD70093DD1A /* manifest.json */; };
+		D367E2F626060DD70093DD1A /* robots.txt in Resources */ = {isa = PBXBuildFile; fileRef = D367E2EE26060DD70093DD1A /* robots.txt */; };
+		D367E2F726060DD70093DD1A /* logo192.png in Resources */ = {isa = PBXBuildFile; fileRef = D367E2EF26060DD70093DD1A /* logo192.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D367E2D426060DD50093DD1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D367E2B826060DD30093DD1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D367E2D126060DD50093DD1A;
+			remoteInfo = "Interval - 24 hour new tab clock Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D367E2E326060DD50093DD1A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D367E2D326060DD50093DD1A /* Interval - 24 hour new tab clock Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D367E2C026060DD40093DD1A /* Interval - 24 hour new tab clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interval - 24 hour new tab clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D367E2C326060DD40093DD1A /* Interval___24_hour_new_tab_clock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Interval___24_hour_new_tab_clock.entitlements"; sourceTree = "<group>"; };
+		D367E2C426060DD40093DD1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D367E2C726060DD40093DD1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D367E2C926060DD40093DD1A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D367E2CB26060DD50093DD1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D367E2CD26060DD50093DD1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D367E2D226060DD50093DD1A /* Interval - 24 hour new tab clock Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Interval - 24 hour new tab clock Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D367E2D726060DD50093DD1A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D367E2DA26060DD50093DD1A /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		D367E2DC26060DD50093DD1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D367E2DD26060DD50093DD1A /* Interval___24_hour_new_tab_clock_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Interval___24_hour_new_tab_clock_Extension.entitlements"; sourceTree = "<group>"; };
+		D367E2E826060DD70093DD1A /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = favicon.ico; path = ../../build/favicon.ico; sourceTree = "<group>"; };
+		D367E2E926060DD70093DD1A /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = index.html; path = ../../build/index.html; sourceTree = "<group>"; };
+		D367E2EA26060DD70093DD1A /* logo512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo512.png; path = ../../build/logo512.png; sourceTree = "<group>"; };
+		D367E2EB26060DD70093DD1A /* asset-manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "asset-manifest.json"; path = "../../build/asset-manifest.json"; sourceTree = "<group>"; };
+		D367E2EC26060DD70093DD1A /* static */ = {isa = PBXFileReference; lastKnownFileType = folder; name = static; path = ../../build/static; sourceTree = "<group>"; };
+		D367E2ED26060DD70093DD1A /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../build/manifest.json; sourceTree = "<group>"; };
+		D367E2EE26060DD70093DD1A /* robots.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = robots.txt; path = ../../build/robots.txt; sourceTree = "<group>"; };
+		D367E2EF26060DD70093DD1A /* logo192.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo192.png; path = ../../build/logo192.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D367E2BD26060DD30093DD1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D367E2CF26060DD50093DD1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D367E2D826060DD50093DD1A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D367E2B726060DD30093DD1A = {
+			isa = PBXGroup;
+			children = (
+				D367E2C226060DD40093DD1A /* Interval - 24 hour new tab clock */,
+				D367E2D926060DD50093DD1A /* Interval - 24 hour new tab clock Extension */,
+				D367E2D626060DD50093DD1A /* Frameworks */,
+				D367E2C126060DD40093DD1A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D367E2C126060DD40093DD1A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D367E2C026060DD40093DD1A /* Interval - 24 hour new tab clock.app */,
+				D367E2D226060DD50093DD1A /* Interval - 24 hour new tab clock Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D367E2C226060DD40093DD1A /* Interval - 24 hour new tab clock */ = {
+			isa = PBXGroup;
+			children = (
+				D367E2C326060DD40093DD1A /* Interval___24_hour_new_tab_clock.entitlements */,
+				D367E2C426060DD40093DD1A /* AppDelegate.swift */,
+				D367E2C626060DD40093DD1A /* Main.storyboard */,
+				D367E2C926060DD40093DD1A /* ViewController.swift */,
+				D367E2CB26060DD50093DD1A /* Assets.xcassets */,
+				D367E2CD26060DD50093DD1A /* Info.plist */,
+			);
+			path = "Interval - 24 hour new tab clock";
+			sourceTree = "<group>";
+		};
+		D367E2D626060DD50093DD1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D367E2D726060DD50093DD1A /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D367E2D926060DD50093DD1A /* Interval - 24 hour new tab clock Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D367E2E726060DD70093DD1A /* Resources */,
+				D367E2DA26060DD50093DD1A /* SafariWebExtensionHandler.swift */,
+				D367E2DC26060DD50093DD1A /* Info.plist */,
+				D367E2DD26060DD50093DD1A /* Interval___24_hour_new_tab_clock_Extension.entitlements */,
+			);
+			path = "Interval - 24 hour new tab clock Extension";
+			sourceTree = "<group>";
+		};
+		D367E2E726060DD70093DD1A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D367E2E826060DD70093DD1A /* favicon.ico */,
+				D367E2E926060DD70093DD1A /* index.html */,
+				D367E2EA26060DD70093DD1A /* logo512.png */,
+				D367E2EB26060DD70093DD1A /* asset-manifest.json */,
+				D367E2EC26060DD70093DD1A /* static */,
+				D367E2ED26060DD70093DD1A /* manifest.json */,
+				D367E2EE26060DD70093DD1A /* robots.txt */,
+				D367E2EF26060DD70093DD1A /* logo192.png */,
+			);
+			name = Resources;
+			path = "Interval - 24 hour new tab clock Extension";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D367E2BF26060DD30093DD1A /* Interval - 24 hour new tab clock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D367E2E426060DD50093DD1A /* Build configuration list for PBXNativeTarget "Interval - 24 hour new tab clock" */;
+			buildPhases = (
+				D367E2BC26060DD30093DD1A /* Sources */,
+				D367E2BD26060DD30093DD1A /* Frameworks */,
+				D367E2BE26060DD30093DD1A /* Resources */,
+				D367E2E326060DD50093DD1A /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D367E2D526060DD50093DD1A /* PBXTargetDependency */,
+			);
+			name = "Interval - 24 hour new tab clock";
+			productName = "Interval - 24 hour new tab clock";
+			productReference = D367E2C026060DD40093DD1A /* Interval - 24 hour new tab clock.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D367E2D126060DD50093DD1A /* Interval - 24 hour new tab clock Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D367E2E026060DD50093DD1A /* Build configuration list for PBXNativeTarget "Interval - 24 hour new tab clock Extension" */;
+			buildPhases = (
+				D367E2CE26060DD50093DD1A /* Sources */,
+				D367E2CF26060DD50093DD1A /* Frameworks */,
+				D367E2D026060DD50093DD1A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Interval - 24 hour new tab clock Extension";
+			productName = "Interval - 24 hour new tab clock Extension";
+			productReference = D367E2D226060DD50093DD1A /* Interval - 24 hour new tab clock Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D367E2B826060DD30093DD1A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					D367E2BF26060DD30093DD1A = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					D367E2D126060DD50093DD1A = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = D367E2BB26060DD30093DD1A /* Build configuration list for PBXProject "Interval - 24 hour new tab clock" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D367E2B726060DD30093DD1A;
+			productRefGroup = D367E2C126060DD40093DD1A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D367E2BF26060DD30093DD1A /* Interval - 24 hour new tab clock */,
+				D367E2D126060DD50093DD1A /* Interval - 24 hour new tab clock Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D367E2BE26060DD30093DD1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D367E2CC26060DD50093DD1A /* Assets.xcassets in Resources */,
+				D367E2C826060DD40093DD1A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D367E2D026060DD50093DD1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D367E2F426060DD70093DD1A /* static in Resources */,
+				D367E2F026060DD70093DD1A /* favicon.ico in Resources */,
+				D367E2F126060DD70093DD1A /* index.html in Resources */,
+				D367E2F726060DD70093DD1A /* logo192.png in Resources */,
+				D367E2F226060DD70093DD1A /* logo512.png in Resources */,
+				D367E2F526060DD70093DD1A /* manifest.json in Resources */,
+				D367E2F626060DD70093DD1A /* robots.txt in Resources */,
+				D367E2F326060DD70093DD1A /* asset-manifest.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D367E2BC26060DD30093DD1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D367E2CA26060DD40093DD1A /* ViewController.swift in Sources */,
+				D367E2C526060DD40093DD1A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D367E2CE26060DD50093DD1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D367E2DB26060DD50093DD1A /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D367E2D526060DD50093DD1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D367E2D126060DD50093DD1A /* Interval - 24 hour new tab clock Extension */;
+			targetProxy = D367E2D426060DD50093DD1A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D367E2C626060DD40093DD1A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D367E2C726060DD40093DD1A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D367E2DE26060DD50093DD1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D367E2DF26060DD50093DD1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		D367E2E126060DD50093DD1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Interval - 24 hour new tab clock Extension/Interval___24_hour_new_tab_clock_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Interval - 24 hour new tab clock Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Interval---24-hour-new-tab-clock.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D367E2E226060DD50093DD1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Interval - 24 hour new tab clock Extension/Interval___24_hour_new_tab_clock_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Interval - 24 hour new tab clock Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Interval---24-hour-new-tab-clock.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D367E2E526060DD50093DD1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Interval - 24 hour new tab clock/Interval___24_hour_new_tab_clock.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Interval - 24 hour new tab clock/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Interval---24-hour-new-tab-clock";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D367E2E626060DD50093DD1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Interval - 24 hour new tab clock/Interval___24_hour_new_tab_clock.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Interval - 24 hour new tab clock/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Interval---24-hour-new-tab-clock";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D367E2BB26060DD30093DD1A /* Build configuration list for PBXProject "Interval - 24 hour new tab clock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D367E2DE26060DD50093DD1A /* Debug */,
+				D367E2DF26060DD50093DD1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D367E2E026060DD50093DD1A /* Build configuration list for PBXNativeTarget "Interval - 24 hour new tab clock Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D367E2E126060DD50093DD1A /* Debug */,
+				D367E2E226060DD50093DD1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D367E2E426060DD50093DD1A /* Build configuration list for PBXNativeTarget "Interval - 24 hour new tab clock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D367E2E526060DD50093DD1A /* Debug */,
+				D367E2E626060DD50093DD1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D367E2B826060DD30093DD1A /* Project object */;
+}
