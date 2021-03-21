@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import ClockHand from "./ClockHand";
-import ClockMarkers from "./ClockMarkers";
-import ClockNumbers from "./ClockNumbers";
+import AnalogClock from "./AnalogClock";
+import ProgressClock from "./ProgressClock";
+import Nav from "./Nav";
 import "./App.css";
 
 function App() {
+  // Calculate time
+
   const [time, setTime] = useState(Date.now());
 
   const dayFraction = () => {
@@ -17,48 +19,38 @@ function App() {
 
   useEffect(() => {
     const interval = setInterval(() => setTime(dayFraction(), 1000));
-    return () => {
-      clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   }, []);
 
-  const [timeRounded, setTimeRounded] = useState(0);
+  // Select Clock
+  const [clockSelected, setClockSelected] = useState("");
+
+  const selectClock = (selection) => setClockSelected(() => selection);
+
   useEffect(() => {
-    setTimeRounded(Math.round(time * 24));
-  }, [time]);
+    const data = localStorage.getItem("clock-selected");
+    if (data) setClockSelected(() => JSON.parse(data));
+  }, []);
 
-  const sleepTime = 21;
-  const wakeTime = 7;
-  const blurAmount = 1.5;
-  const getAngleFromHour = (time) => (time / 24) * 360;
+  useEffect(() => {
+    localStorage.setItem("clock-selected", JSON.stringify(clockSelected));
+  }, [clockSelected]);
 
-  const clockFaceGradient = `conic-gradient(from 0turn at 50% 50%, #000, 
-      ${getAngleFromHour(
-        wakeTime - blurAmount
-      )}deg, #1e1e1e, ${getAngleFromHour(
-    wakeTime + blurAmount
-  )}deg, #1e1e1e, ${getAngleFromHour(
-    sleepTime - blurAmount
-  )}deg, #000, ${getAngleFromHour(sleepTime + blurAmount)}deg, #000)`;
+  const chosenClock = () => {
+    switch (clockSelected) {
+      case "progress":
+        return <ProgressClock time={time} />;
+      case "analog":
+        return <AnalogClock time={time} timeRounded={Math.round(time * 24)} />;
+      default:
+        return <div />;
+    }
+  };
 
   return (
-    <div className="h-screen flex items-center w-screen justify-center">
-      <div
-        className="relative w-96 h-96 rounded-full"
-        style={{
-          background: clockFaceGradient,
-        }}
-      >
-        <ClockHand time={time} />
-        <ClockNumbers timeRounded={timeRounded} />
-        <ClockMarkers timeRounded={timeRounded} />
-      </div>
-      {
-        // <nav>
-        //   <a href="#">Analog</a>
-        //   <a href="#">Progress</a>
-        // </nav>
-      }
+    <div className="h-screen flex flex-col items-center w-screen justify-center">
+      {chosenClock()}
+      <Nav selected={clockSelected} action={selectClock} />
     </div>
   );
 }
