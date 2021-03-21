@@ -58,6 +58,11 @@ function App() {
     localStorage.setItem("user-preferences", JSON.stringify(prefs));
   }, [prefs]);
 
+  //Show/Hide preferences
+  const [prefsOpen, setPrefsOpen] = useState(false);
+  const togglePrefs = () => setPrefsOpen(prefsOpen ? false : true);
+  const prefsHiddenClass = prefsOpen ? "" : "hidden";
+
   // Load clock based on selected
   const chosenClock = () => {
     switch (prefs.clockSelected) {
@@ -80,7 +85,19 @@ function App() {
   return (
     <div className="h-screen flex flex-col items-center w-screen justify-center">
       {chosenClock()}
-      <div className="absolute top-2 p-4 left-2 width-72 bg-gray-700 h-128 text-gray-300 flex flex-col space-y-2">
+      <p
+        className="absolute bottom-2 left-2 text-white opacity-40"
+        onClick={togglePrefs}
+      >
+        Preferences
+      </p>
+      <div
+        className={
+          "absolute bottom-2 p-4 left-2 width-72 bg-gray-700 h-128 text-gray-300 flex flex-col space-y-2" +
+          " " +
+          prefsHiddenClass
+        }
+      >
         <label for="wakeTime">
           <span className="mr-4">Wake time</span>
           <input
@@ -111,7 +128,7 @@ function App() {
             Progress
           </button>
         </div>
-        <button>Done</button>
+        <button onClick={togglePrefs}>Done</button>
       </div>
     </div>
   );
