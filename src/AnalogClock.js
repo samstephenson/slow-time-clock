@@ -6,17 +6,17 @@ import ClockNumbers from "./ClockNumbers";
 export default function AnalogClock(props) {
   const timeRounded = props.timeRounded;
 
-  const sleepTime = 21;
-  const wakeTime = 7;
   const blurAmount = 1.5;
   const getAngleFromHour = (time) => (time / 24) * 360;
 
   const clockFaceGradient = `conic-gradient(from 0turn at 50% 50%, #000, 
-		  ${getAngleFromHour(wakeTime - blurAmount)}deg, #1e1e1e, ${getAngleFromHour(
-    wakeTime + blurAmount
+		  ${getAngleFromHour(
+        props.wakeTime - blurAmount
+      )}deg, #1e1e1e, ${getAngleFromHour(
+    props.wakeTime + blurAmount
   )}deg, #1e1e1e, ${getAngleFromHour(
-    sleepTime - blurAmount
-  )}deg, #000, ${getAngleFromHour(sleepTime + blurAmount)}deg, #000)`;
+    props.sleepTime - blurAmount
+  )}deg, #000, ${getAngleFromHour(props.sleepTime + blurAmount)}deg, #000)`;
 
   return (
     <div

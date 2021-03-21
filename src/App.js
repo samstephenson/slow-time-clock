@@ -22,26 +22,56 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
-  // Select Clock
-  const [clockSelected, setClockSelected] = useState("");
+  const [prefs, setPrefs] = useState({
+    wakeTime: 7,
+    sleepTime: 21,
+    clockSelected: "",
+  });
+  const handlePrefsChange = (e) => {
+    setPrefs((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+    console.log(prefs);
+  };
 
-  const selectClock = (selection) => setClockSelected(() => selection);
+  const selectClock = (e) => {
+    setPrefs((prev) => ({
+      ...prev,
+      clockSelected: e.target.innerText.toLowerCase(),
+    }));
+  };
 
+  // Save/Retrieve user preferences from local storage. Set to analog if no clock selected
   useEffect(() => {
-    const data = localStorage.getItem("clock-selected");
-    if (data) setClockSelected(() => JSON.parse(data));
+    const data = localStorage.getItem("user-preferences");
+    if (data) {
+      setPrefs(() => JSON.parse(data));
+    } else {
+      setPrefs((prev) => ({
+        ...prev,
+        clockSelected: "analog",
+      }));
+    }
   }, []);
-
   useEffect(() => {
-    localStorage.setItem("clock-selected", JSON.stringify(clockSelected));
-  }, [clockSelected]);
+    localStorage.setItem("user-preferences", JSON.stringify(prefs));
+  }, [prefs]);
 
+  // Load clock based on selected
   const chosenClock = () => {
-    switch (clockSelected) {
+    switch (prefs.clockSelected) {
       case "progress":
         return <ProgressClock time={time} />;
       case "analog":
-        return <AnalogClock time={time} timeRounded={Math.round(time * 24)} />;
+        return (
+          <AnalogClock
+            time={time}
+            timeRounded={Math.round(time * 24)}
+            wakeTime={prefs.wakeTime}
+            sleepTime={prefs.sleepTime}
+          />
+        );
       default:
         return <div />;
     }
@@ -50,7 +80,39 @@ function App() {
   return (
     <div className="h-screen flex flex-col items-center w-screen justify-center">
       {chosenClock()}
-      <Nav selected={clockSelected} action={selectClock} />
+      <div className="absolute top-2 p-4 left-2 width-72 bg-gray-700 h-128 text-gray-300 flex flex-col space-y-2">
+        <label for="wakeTime">
+          <span className="mr-4">Wake time</span>
+          <input
+            className="w-32 p-1 px-2 bg-gray-800"
+            name="wakeTime"
+            id="wakeTime"
+            type="number"
+            onChange={handlePrefsChange}
+            value={prefs.wakeTime}
+          />
+        </label>
+        <label for="sleepTime">
+          <span className="mr-4">Sleep time</span>
+          <input
+            className="w-32 p-1 px-2 bg-gray-800"
+            name="sleepTime"
+            id="sleepTime"
+            type="number"
+            onChange={handlePrefsChange}
+            value={prefs.sleepTime}
+          />
+        </label>
+        <div className="flex w-full space-x-2">
+          <button onClick={selectClock} className="flex-auto p-2 bg-gray-800">
+            Analog
+          </button>
+          <button onClick={selectClock} className="flex-auto p-2 bg-gray-800">
+            Progress
+          </button>
+        </div>
+        <button>Done</button>
+      </div>
     </div>
   );
 }
