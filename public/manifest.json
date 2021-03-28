@@ -10,9 +10,9 @@
   },
   "permissions": ["storage"],
   "icons": {
-    "16": "favicon.ico",
-    "48": "favicon.ico",
-    "128": "logo192.png"
+    "16": "/img/icon_16.png",
+    "48": "/img/icon_48.png",
+    "128": "/img/icon_128.png"
   },
   "offline_enabled": true,
   "content_security_policy": "script-src 'self' 'sha256-B+Qe/KNUDtGDd/m1g5ycAq1DgpLs9ubKmYTlOHBogC8='; object-src 'self'"
