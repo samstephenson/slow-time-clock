@@ -22,21 +22,30 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
-  const [prefs, setPrefs] = useState({
+  const defaultPrefs = {
     wakeTime: 7,
     sleepTime: 21,
     clockSelected: "",
-  });
-  const handlePrefsChange = (e) => {
-    setPrefs((prevState) => ({
+  };
+  const [prefs, setPrefs] = useState(defaultPrefs);
+  const handlePrefsChange = e => {
+    setPrefs(prevState => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
     console.log(prefs);
   };
 
-  const selectClock = (e) => {
-    setPrefs((prev) => ({
+  const resetPrefs = () => {
+    setPrefs(() => defaultPrefs);
+    setPrefs(prev => ({
+      ...prev,
+      clockSelected: "analog",
+    }));
+  };
+
+  const selectClock = e => {
+    setPrefs(prev => ({
       ...prev,
       clockSelected: e.target.innerText.toLowerCase(),
     }));
@@ -48,10 +57,7 @@ function App() {
     if (data) {
       setPrefs(() => JSON.parse(data));
     } else {
-      setPrefs((prev) => ({
-        ...prev,
-        clockSelected: "analog",
-      }));
+      resetPrefs();
     }
   }, []);
   useEffect(() => {
@@ -61,7 +67,6 @@ function App() {
   //Show/Hide preferences
   const [prefsOpen, setPrefsOpen] = useState(false);
   const togglePrefs = () => setPrefsOpen(prefsOpen ? false : true);
-  const prefsHiddenClass = prefsOpen ? "" : "hidden";
 
   // Load clock based on selected
   const chosenClock = () => {
@@ -91,45 +96,44 @@ function App() {
       >
         Preferences
       </p>
-      <div
-        className={
-          "absolute bottom-2 p-4 left-2 width-72 bg-gray-700 h-128 text-gray-300 flex flex-col space-y-2" +
-          " " +
-          prefsHiddenClass
-        }
-      >
-        <label for="wakeTime">
-          <span className="mr-4">Wake time</span>
-          <input
-            className="w-32 p-1 px-2 bg-gray-800"
-            name="wakeTime"
-            id="wakeTime"
-            type="number"
-            onChange={handlePrefsChange}
-            value={prefs.wakeTime}
-          />
-        </label>
-        <label for="sleepTime">
-          <span className="mr-4">Sleep time</span>
-          <input
-            className="w-32 p-1 px-2 bg-gray-800"
-            name="sleepTime"
-            id="sleepTime"
-            type="number"
-            onChange={handlePrefsChange}
-            value={prefs.sleepTime}
-          />
-        </label>
-        <div className="flex w-full space-x-2">
-          <button onClick={selectClock} className="flex-auto p-2 bg-gray-800">
-            Analog
-          </button>
-          <button onClick={selectClock} className="flex-auto p-2 bg-gray-800">
-            Progress
-          </button>
+      {prefsOpen && (
+        <div className="absolute bottom-2 p-4 left-2 width-72 bg-gray-700 h-128 text-gray-300 flex flex-col space-y-2">
+          <label for="wakeTime">
+            <span className="mr-4">Wake time</span>
+            <input
+              className="w-32 p-1 px-2 bg-gray-800"
+              name="wakeTime"
+              id="wakeTime"
+              type="number"
+              onChange={handlePrefsChange}
+              value={prefs.wakeTime}
+            />
+          </label>
+          <label for="sleepTime">
+            <span className="mr-4">Sleep time</span>
+            <input
+              className="w-32 p-1 px-2 bg-gray-800"
+              name="sleepTime"
+              id="sleepTime"
+              type="number"
+              onChange={handlePrefsChange}
+              value={prefs.sleepTime}
+            />
+          </label>
+          <div className="flex w-full space-x-2">
+            <button onClick={selectClock} className="flex-auto p-2 bg-gray-800">
+              Analog
+            </button>
+            <button onClick={selectClock} className="flex-auto p-2 bg-gray-800">
+              Progress
+            </button>
+          </div>
+          <div className="flex justify-evenly pt-2">
+            <button onClick={togglePrefs}>Done</button>
+            <button onClick={resetPrefs}>Reset</button>
+          </div>
         </div>
-        <button onClick={togglePrefs}>Done</button>
-      </div>
+      )}
     </div>
   );
 }
