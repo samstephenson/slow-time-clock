@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "short_name": "Slow Time",
-  "name": "Slow Time new tab",
+  "short_name": "Interval",
+  "name": "Interval – 24 hour newtab clock",
   "version": "1.0",
   "description": "24-hour clock face for your new tabs",
   "author": "Sam Stephenson",
@@ -10,9 +10,9 @@
   },
   "permissions": ["storage"],
   "icons": {
-    "16": "/img/icon_16.png",
-    "48": "/img/icon_48.png",
-    "128": "/img/icon_128.png"
+    "16": "img/icon_16.png",
+    "48": "img/icon_48.png",
+    "128": "img/icon_128.png"
   },
   "offline_enabled": true,
   "content_security_policy": "script-src 'self' 'sha256-B+Qe/KNUDtGDd/m1g5ycAq1DgpLs9ubKmYTlOHBogC8='; object-src 'self'"
