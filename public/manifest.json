@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "short_name": "Interval",
   "name": "Interval – 24 hour newtab clock",
-  "version": "1.0",
+  "version": "1.01",
   "description": "24-hour clock face for your new tabs",
   "author": "Sam Stephenson",
   "chrome_url_overrides": {
