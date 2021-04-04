@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AnalogClock from "./AnalogClock";
 import ProgressClock from "./ProgressClock";
-import Nav from "./Nav";
 import "./App.css";
 
 function App() {
@@ -59,7 +58,7 @@ function App() {
     } else {
       resetPrefs();
     }
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     localStorage.setItem("user-preferences", JSON.stringify(prefs));
   }, [prefs]);
